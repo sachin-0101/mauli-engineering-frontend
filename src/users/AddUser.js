@@ -19,7 +19,7 @@ export default function AddUser() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:8080/AddUser", user);
+    await axios.post("http://localhost:8080/user", user);
     navigate("/");
   };
 
@@ -27,12 +27,12 @@ export default function AddUser() {
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-          <h2 className="text-center m-4">Register New User</h2>
+          <h2 className="text-center m-4">Register User</h2>
 
           <form onSubmit={(e) => onSubmit(e)}>
             <div className="mb-3">
               <label htmlFor="Name" className="form-label">
-                {/* Name */}
+                Name
               </label>
               <input
                 type={"text"}
@@ -41,12 +41,11 @@ export default function AddUser() {
                 name="name"
                 value={name}
                 onChange={(e) => onInputChange(e)}
-                required
               />
             </div>
             <div className="mb-3">
               <label htmlFor="Username" className="form-label">
-                {/* Username */}
+                Username
               </label>
               <input
                 type={"text"}
@@ -55,12 +54,11 @@ export default function AddUser() {
                 name="username"
                 value={username}
                 onChange={(e) => onInputChange(e)}
-                required
               />
             </div>
             <div className="mb-3">
               <label htmlFor="Email" className="form-label">
-                {/* E-mail */}
+                E-mail
               </label>
               <input
                 type={"text"}
@@ -69,7 +67,6 @@ export default function AddUser() {
                 name="email"
                 value={email}
                 onChange={(e) => onInputChange(e)}
-                required
               />
             </div>
             <button type="submit" className="btn btn-outline-primary">
